@@ -1,0 +1,35 @@
+.text-block {
+    padding: 100px 0;
+
+    .section-head__title {
+        @include clamp-font-size(24, 40);
+    }
+
+    .section-head__pretitle {
+        @include clamp-font-size(14, 16);
+        margin-bottom: 20px;
+    }
+
+    .section-head__pretitle--sm {
+        @include clamp-font-size(12, 14);
+        text-transform: none;
+        font-weight: 400;
+    }
+
+    @include mq($md) {
+        padding: 50px 0;
+    }
+}
+
+.text-block--yellow {
+    background: linear-gradient(76deg, #f9f9f9 15.87%, #eceee1 96.74%);
+    padding: 100px 0 80px;
+
+    .section-head__title {
+        color: $lunar-green;
+    }
+
+    @include mq($md) {
+        padding: 50px 0;
+    }
+}

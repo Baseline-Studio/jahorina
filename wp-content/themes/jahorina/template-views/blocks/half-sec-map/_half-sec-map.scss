@@ -1,0 +1,165 @@
+.half-sec-map {
+    padding: 140px 0 130px;
+    background-color: $azure;
+
+    .section-head__title {
+        color: $deep-teal;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .section-head__subtitle {
+        span {
+            font-weight: 600;
+        }
+    }
+
+    @include mq($tablet) {
+        padding: 50px 0;
+
+        .section-head__title {
+            max-width: 100%;
+            margin: 0 auto 25px;
+        }
+    }
+}
+
+.half-sec-map__container {
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    grid-gap: 80px;
+
+    @include mq($tablet) {
+        grid-gap: 40px;
+    }
+
+    @include mq($lg) {
+        display: block;
+        margin-top: 30px;
+    }
+}
+
+.half-sec-map-image {
+    flex: 50%;
+    max-width: 50%;
+
+    img {
+        width: 100%;
+        border-radius: 40px;
+    }
+
+    @include mq($lg) {
+        flex: 100%;
+        max-width: 100%;
+        margin-bottom: 30px;
+
+        img {
+            border-radius: 20px;
+        }
+    }
+}
+
+.half-sec-map__distance {
+    flex: 40%;
+    max-width: 40%;
+
+    h3 {
+        @include clamp-font-size(24, 30);
+        color: $deep-teal;
+        margin-bottom: 40px;
+        font-family: 'Lora';
+    }
+
+    ul {
+        counter-reset: item; /* Resetuje brojač na početku liste */
+
+        li {
+            position: relative;
+            padding-left: 35px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 18px;
+            border-bottom: 1px solid $light-grey;
+            ;
+            padding: 8px 0 8px 35px;
+
+            &::before {
+                content: counter(item);
+                counter-increment: item;
+                position: absolute;
+                left: 0;
+                top: 50%;
+                transform: translateY(-50%);
+                background-color: $black;
+                color: $white;
+                width: 26px;
+                height: 26px;
+                border-radius: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                @include clamp-font-size(11, 15);
+                line-height: 1;
+            }
+        }
+    }
+
+    @include mq($lg) {
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    @include mq($md) {
+        ul {
+            li {
+                font-size: 14px;
+                padding: 15px 0 15px 40px;
+            }
+        }
+    }
+}
+
+.half-sec-map__distance-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid $light-grey;
+}
+
+.half-sec-map__distance-item {
+    flex: 33.3%;
+    max-width: 33.3%;
+
+    &:nth-of-type(2),
+    &:nth-of-type(3) {
+        display: flex;
+        justify-content: end;
+    }
+}
+
+.city-name {
+    @include clamp-font-size(14, 16);
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+    flex: 50%;
+    max-width: 50%;
+}
+
+.distance {
+    display: flex;
+    justify-content: end;
+    flex: 25%;
+    max-width: 25%;
+    @include clamp-font-size(14, 16);
+}
+
+.travel-time {
+    display: flex;
+    justify-content: center;
+    max-width: 25%;
+    flex: 25%;
+    @include clamp-font-size(14, 16);
+}

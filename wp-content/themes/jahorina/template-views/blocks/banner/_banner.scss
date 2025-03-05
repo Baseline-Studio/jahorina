@@ -1,0 +1,220 @@
+.banner {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 100svh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    @include mq($tablet) {
+        min-height: calc(50vh + 130px);
+    }
+
+    @include mq($md) {
+        min-height: 500px;
+    }
+}
+
+.banner_img2 {
+    position: absolute;
+    right: 13%;
+    bottom: -5%;
+    z-index: 2;
+
+    @include mq($tablet) {
+        display: none;
+    }
+}
+
+
+.banner__img-mobile-none {
+    @include mq($md) {
+        display: none;
+    }
+}
+
+.banner__content {
+    max-width: 786px;
+    position: relative;
+    z-index: 2;
+
+    @include mq($tablet) {
+        max-width: 595px;
+        padding-top: 130px;
+    }
+
+    @include mq($md) {
+        padding-top: 75px;
+    }
+}
+
+.banner__content-wrap {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+
+    .banner__content__title {
+        max-width: 544px;
+    }
+
+    .banner__content__subtitle {
+        max-width: 427px;
+        margin-bottom: 0;
+    }
+}
+
+.banner__img {
+    margin-right: 40px;
+
+    @include mq($md) {
+        display: none;
+    }
+}
+
+.banner-btn {
+    position: relative;
+    z-index: 2;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+.banner__content__title {
+    @include clamp-font-size(30, 50);
+    color: $white;
+    margin-bottom: 30px;
+    line-height: 1.3;
+    font-family: $font-main;
+    will-change: transform;
+    backface-visibility: hidden;
+    overflow: hidden;
+    opacity: 1;
+    visibility: visible;
+    max-width: 756px;
+
+    @include mq($xxl) {
+        max-width: 600px;
+    }
+}
+
+.banner__content__title--green {
+    color: $deep-teal;
+}
+
+.banner__content__subtitle {
+    @include clamp-font-size(16, 18);
+    margin-bottom: 40px;
+    line-height: 1.4;
+    color: $white;
+    will-change: transform;
+    backface-visibility: hidden;
+    // max-width: 645px;
+}
+
+.banner__content__subtitle--black {
+    color: $black !important;
+}
+
+.banner__content__subtitle--sm {
+    max-width: 610px !important;
+}
+////////////////////////////////////////////////////////// Banner Contact ////////////////////////////////////////////////////////////////////////////////
+
+.banner-contact {
+    padding: 160px 0 0;
+    background-color: $azure;
+
+    @include mq($md) {
+        padding: 114px 0 0;
+    }
+}
+
+.banner-contact__container {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 10px;
+
+    @include mq($md) {
+        display: block;
+    }
+}
+
+.banner__contact-form {
+    flex: 50%;
+    max-width: 50%;
+
+    @include mq($tablet) {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.banner-contact__content {
+    flex: 50%;
+    max-width: 50%;
+    padding-top: 50px;
+
+    @include mq($tablet) {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.banner-contact__content-pretitle {
+    @include clamp-font-size(14, 16);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.banner-contact__content-title {
+    @include clamp-font-size(30, 40);
+    margin-bottom: 40px;
+    color: $tangaroa;
+    font-family: $font-main;
+    line-height: 1.3;
+}
+
+.banner-contact__content-subtitle {
+    @include clamp-font-size(16, 18);
+    max-width: 400px;
+	font-family: $font-second;
+}
+
+.banner-contact__informations {
+    margin: 60px 0;
+
+    @include mq($md) {
+        margin: 30px 0 0;
+    }
+}
+
+.banner-contact__item {
+    grid-gap: 15px;
+    margin-bottom: 18px;
+
+    a {
+        @include clamp-font-size(10, 12);
+        display: block;
+		font-family: $font-second;
+    }
+
+    @include mq($xs) {
+       padding: 0;
+       flex: 100%;
+       max-width: 100%;
+    }
+}
+
+.banner-contact__item,
+.banner-contact__item-left {
+    display: flex;
+    align-items: center;
+}
+
+.banner-contact__item-left {
+    grid-gap: 8px;
+    
+}

@@ -1,0 +1,336 @@
+.big-map {
+    padding: 100px 0 50px;
+    position: relative;
+
+    .section-head__title {
+        color: $deep-teal;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    @include mq($md) {
+        padding: 50px 0 10px;
+
+        .section-head__title {
+            max-width: 350px;
+            margin: 0 auto 25px;
+        }
+    }
+}
+
+.big-map__img-container {
+    position: relative;
+    margin-top: 100px;
+
+    img {
+        width: 100%;
+        max-height: 881px;
+    }
+
+    @include mq($lg) {
+        margin-top: 30px;
+    }
+}
+
+.big-map__img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.tabs {
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    grid-gap: 10px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 5px 10px;
+    border-radius: 40px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+
+    @include mq($lg) {
+        position: relative;
+        transform: translateX(0);
+        left: 0;
+        top: 0;
+        width: fit-content;
+        margin: 40px auto 0;
+    }
+}
+
+.tab-button {
+    background-color: transparent;
+    padding: 6px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+    
+    .icon {
+        fill: $black; // Crna boja za neaktivno stanje
+        transition: fill 0.3s;
+    }
+
+    &.active {
+        background-color: $blue;
+        
+        .icon {
+            fill: $white; // Bela boja za aktivno stanje
+        }
+    }
+}
+
+.tab-content {
+    display: none;
+
+    &.active {
+        display: block;
+    }
+}
+
+.attractions-sec {
+    padding: 47px 0 0;
+
+    h3 {
+        font-family: $font-main;
+        color: $deep-teal;
+        @include clamp-font-size(24, 30);
+        margin-bottom: 40px;
+    }
+}
+
+.attractions-sec__container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+    counter-reset: item;
+    
+    @include mq($xss) {
+        flex-direction: column;
+    }
+}
+
+.attraction-item {
+    flex: 1 1 25%;
+    max-width: 25%;
+    padding: 0 10px;
+    position: relative;
+
+    @include mq($lg) {
+        flex: 50%;
+        max-width: 50%;
+    }
+
+    @include mq($xss) {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
+
+.attraction-name {
+    position: relative;
+    padding-left: 45px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+
+    &::before {
+        content: counter(item);
+        counter-increment: item;
+        position: absolute;
+        left: 0;
+        background-color: $black;
+        color: $white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        line-height: 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 95%;
+        height: 1px;
+        background-color: #ddd;
+    }
+
+    @include mq($md) {
+        font-size: 12px;
+        padding-left: 33px;
+    
+        &::before {
+            width: 24px;
+            height: 24px;
+            font-size: 11px;
+        }
+    }
+}
+
+.summer .point-13 {
+    z-index: 11;
+}
+
+.winter .point-1 {
+    z-index: 11;
+}
+
+.point {
+    position: absolute;
+    width: 46px;
+    height: 46px;
+    background-color: $black;
+    color: $white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+    transition: background-color 0.3s;
+    z-index: 10;
+
+    &.active,
+    &:hover {
+        background-color: $orange; // Narandžasta boja za aktivno stanje i hover
+        color: $white;
+
+        &::after {
+            opacity: 1; // Prikaži tekst kada je aktivna ili hovered
+        }
+    }
+
+    &::after {
+        content: attr(data-title);
+        position: absolute;
+        top: -35px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $black;
+        color: $white;
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        z-index: 9;
+
+        @include mq($md) {
+            font-size: 5px;
+            top: -20px;
+        }
+    }
+
+    @include mq($xl) {
+        width: 30px;
+        height: 30px;
+        font-size: 14px;
+    }
+
+    @include mq($md) {
+        width: 10px;
+        height: 10px;
+        font-size: 3px;
+
+        &::after {
+            content: none;
+        }
+    }
+}
+
+#pin {
+    position: absolute;
+    max-width: 60px;
+    top: 54%;
+    left: 81.5%;
+
+    @include mq($xxl) {
+        max-width: 45px;
+    }
+
+    @include mq($xl) {
+        max-width: 35px;
+    }
+
+    @include mq($md) {
+        max-width: 25px;
+        top: 45%;
+        left: 80.5%;
+    }
+}
+
+/* Letnje pozicioniranje tačaka */
+.summer {
+    $summer-points: (
+        1: (78%, 60%),
+        2: (95%, 55%),
+        3: (48%, 43%),
+        4: (76%, 68%),
+        5: (32%, 78%),
+        6: (86%, 61%),
+        7: (95%, 59%),
+        8: (82%, 66%),
+        9: (60%, 39%),
+        10: (65%, 29%),
+        11: (72%, 37%),
+        12: (30%, 72%),
+        13: (95%, 63%),
+        14: (88%, 64%),
+        15: (34%, 74%),
+        // 16: (61%, 83%),
+    );
+
+    @each $i, $coords in $summer-points {
+        .point-#{$i} {
+            top: nth($coords, 1);
+            left: nth($coords, 2);
+        }
+    }
+}
+  
+/* Zimsko pozicioniranje tačaka */
+.winter {
+    $winter-points: (
+        1: (75%, 60%),
+        2: (67%, 45%),
+        3: (65%, 39%),
+        4: (50%, 41%),
+        5: (45%, 36%),
+        6: (67%, 3%),
+        7: (71%, 63%),
+        8: (73%, 48%),
+        9: (58%, 80%),
+        10: (37%, 40%),
+        11: (42%, 32%),
+        12: (47%, 60%),
+        13: (71%, 6%),
+        14: (72%, 68%),
+        15: (81%, 72%),
+        16: (34%, 74%),
+    );
+
+    @each $i, $coords in $winter-points {
+        .point-#{$i} {
+            top: nth($coords, 1);
+            left: nth($coords, 2);
+        }
+    }
+}
+  
+  

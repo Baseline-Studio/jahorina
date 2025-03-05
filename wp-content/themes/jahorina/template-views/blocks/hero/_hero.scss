@@ -1,0 +1,103 @@
+.home-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: calc(100vh + 60px);
+    background-color: $white-smoke;
+    // background: linear-gradient(154deg, rgba(255, 255, 255, 0.05) 61.61%, #be8757 103.81%);
+    overflow: hidden;
+
+    @include mq($tablet) {
+       display: block;
+       height: 100%;
+    }
+
+    @include mq($md) {
+        display: flex;
+        flex-direction: column-reverse;
+
+        video {
+            margin: 106px 0 30px;
+        }
+    }
+}
+
+.home-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    grid-gap: 50px;
+
+    @include mq($tablet) {
+        display: block;
+    }
+
+    @include mq($md) {
+        display: flex;
+        flex-direction: column-reverse;
+        grid-gap: 6px;
+    }
+}
+
+#myVideo  {
+    border-radius: 40px;
+    position: absolute;
+    width: 65%;
+    right: 0;
+
+    @include mq($tablet) {
+        width: 100%;
+        position: relative;
+    }
+
+    @include mq($md) {
+        width: 133%;
+    }
+}
+
+.video-content {
+    z-index: 998;
+    flex: 40%;
+    max-width: 40%;
+
+    h1 {
+        @include clamp-font-size(30, 50);
+        color: $deep-teal;
+        line-height: 1.2;
+        margin-bottom: 40px;
+        font-family: $font-main;
+        max-width: 609px;
+    }
+
+    p {
+        @include clamp-font-size(16, 18);
+        // color: $verdun-green;
+        max-width: 478px;
+        margin-bottom: 40px;
+    }
+
+    @include mq($xxl) {
+        h1 {
+            max-width: 410px;
+        }
+       
+    }
+
+    @include mq($tablet) {
+        padding: 190px 0 5vh 5vw;
+        flex: 100%;
+        max-width: 100%;
+    }
+
+    @include mq($md) {
+        padding: 0 0 37px;
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p {
+            margin-bottom: 30px;
+        }
+    }
+}

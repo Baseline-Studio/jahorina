@@ -1,0 +1,79 @@
+/*--------------------------------------------------------------
+## Main Variables
+--------------------------------------------------------------*/
+// Fonts
+$font-default-serif: 'Open Sans';
+$font-default-sans-serif: 'Lora';
+
+$font-main: $font-default-sans-serif;
+$font-second: $font-default-serif;
+
+$site-fonts: (
+	'font-main': $font-main,
+	'font-second': $font-second,
+) !default;
+
+// Colors
+$white: #fff;
+$black: #2a2a2a;
+$watercourse: #00674f;
+$deep-teal: #054135;
+$zeus: #3e3f39;
+$verdun-green: #434c19;
+$azure: #f2f7f8;
+$green-mist: #c5cca0;
+$light-grey: #cacaca;
+$lunar-green: #575d46;
+$gainsboro: #d9d9d9;
+$tangaroa: #052541;
+$gray: #666;
+$grey: #828282;
+$blue: #a0c3cc;
+$kelp: #50543e;
+$dark-emerald: #054135;
+$orange: #c63;
+$white-smoke: #f1f1f1;
+$black-squeeze: #e6e8d8;
+
+$site-colors: (
+	'white': $white,
+	'black': $black,
+	'watercourse': $watercourse,
+	'zeus': #3e3f39,
+	'verdun-green': #434c19,
+	'deep-teal': #054135,
+	'azure': #f2f7f8,
+	'green-mist': #c5cca0,
+	'light-grey': #cacaca,
+	'lunar-green': #575d46,
+	'gainsboro': #d9d9d9,
+	'tangaroa': #052541,
+	'gray': #666,
+	'grey': #828282,
+	'blue': #a0c3cc,
+	'kelp': $kelp,
+	'dark-emerald': $dark-emerald,
+	'orange': $orange,
+	'white-smoke': $white-smoke,
+	'$black-squeeze': $black-squeeze,
+	
+) !default;
+
+// Transitions
+$dur: 350ms;
+$ease: ease;
+
+/*--------------------------------------------------------------
+## Breakpoint Variables
+--------------------------------------------------------------*/
+$xss: 400px;
+$smx: 500px;
+$sm: 575px;
+$md: 767px;
+$lg: 991px;
+$tablet: 1025px;
+$xs: 1100px;
+$xl: 1199px;
+$l300: 1300px;
+$xxl: 1440px;
+$xxxl: 1599px;

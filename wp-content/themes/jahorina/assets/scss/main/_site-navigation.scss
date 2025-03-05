@@ -1,0 +1,138 @@
+/*--------------------------------------------------------------
+## Navigation
+--------------------------------------------------------------*/
+a {
+	text-decoration: none;
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+		outline: 0;
+	}
+}
+
+.main-navigation__toggle {
+	position: relative;
+	z-index: 1;
+	width: 24px;
+  	height: 20px;
+	border: none;
+	background-color: transparent;
+	display: block;
+	padding: 0;
+
+	@include mq($md + 1, min) {
+		display: none;
+	}
+}
+
+.main-navigation__toggle-stripe {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 2px;
+	background-color: $black;
+	transition: transform $dur $ease;
+	will-change: transform;
+	transform-origin: left;
+
+	&:nth-child(1) {
+		top: 0;
+	}
+
+	&:nth-child(2) {
+		top: 50%;
+		transform: translateY(-50%);
+	}
+
+	&:nth-child(3) {
+		top: 100%;
+		margin-top: -3px;
+	}
+
+	.is-active & {
+		&:nth-child(1) {
+			transform: rotate(45deg);
+		}
+
+		&:nth-child(2) {
+			display: none;
+		}
+
+		&:nth-child(3) {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.main-navigation__menu-wrap {
+	@include mq($md) {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $white;
+		opacity: 0;
+		visibility: hidden;
+		transition: transform $dur $ease, opacity $dur $dur $ease, visibility $dur $dur $ease;
+		transform: translateX(100%);
+		will-change: transform;
+		padding: 80px 20px 0;
+
+		&.is-active {
+			opacity: 1;
+			visibility: visible;
+			transform: translateX(0);
+			transition: transform $dur $ease, opacity $dur $ease, visibility $dur $ease;
+		}
+	}
+}
+
+.main-navigation__menu {
+	text-align: center;
+
+	li {
+		margin: 0 5px;
+	}
+
+	@include mq($md + 1, min) {
+		display: flex;
+		align-items: center;
+		text-align: left;
+	}
+
+	@include mq($md) {
+		li {
+			padding-bottom: 15px;
+		}
+		
+	}
+}
+
+.main-navigation__menu a {
+	font-family: $font-second;
+	color: $zeus;
+	font-weight: 600;
+	font-size: 16px;
+	line-height: 1.375;
+	transition: $dur $ease;
+	position: relative;
+	display: inline-block;
+	padding: 10px 15px;
+	border-radius: 40px;
+
+	@include hover {
+		background-color: $black-squeeze;
+	}
+
+	@include mq($md) {
+		padding: 10px 25px;
+	}
+}
+
+.main-navigation__menu li.current-menu-item a {
+	// color: $watercourse;
+	background-color: $green-mist;
+}

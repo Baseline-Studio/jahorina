@@ -1,0 +1,227 @@
+.intro {
+    text-align: center;
+    padding: 100px 0 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: $white-smoke;
+
+    .section-head__title {
+        color: $deep-teal;
+    }
+
+    @include mq($tablet) {
+        padding: 100px 0 0;
+    }
+
+    @include mq($lg) {
+        .section-head {
+            max-width: 522px;
+            margin: 0 auto 60px;
+        }
+    }
+
+    @include mq($md) {
+        padding: 50px 0 0;
+
+        .section-head {
+            margin-bottom: 30px;
+        }
+    }
+}
+
+.intro__container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+
+    @include mq($xl) {
+        padding: 0 20px;
+    }
+
+    @include mq($tablet) {
+        height: 36vh;
+    }
+
+    @include mq($lg) {
+        padding: 0;
+    }
+
+    @include mq($md) {
+        display: block;
+        margin-bottom: 0;
+    }
+}
+
+.intro__wrap {
+    // min-height: 724px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    border-radius: 55px;
+    z-index: 2;
+    position: relative;
+    padding-bottom: 300px;
+
+    @include mq($tablet) {
+        padding-bottom: 0;
+    }
+
+    @include mq($md) {
+        // min-height: 558px;
+        border-radius: 36px;
+    }
+}
+
+.intro-info {
+    width: 100%;
+    max-width: 374px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background-color: $white;
+    border-right: 1px solid $black;
+    min-height: 209px;
+
+    &:first-of-type {
+        border-top-left-radius: 30px;
+        border-bottom-left-radius: 30px;
+    }
+
+    &:last-of-type {
+        margin-right: 0;
+        border-top-right-radius: 30px;
+        border-bottom-right-radius: 30px;
+        border-right: 0;
+    }
+
+    @include mq($l300) {
+        padding: 30px;
+    }
+
+    @include mq($xs) {
+        padding: 30px 40px;
+    }
+
+    @include mq($md) {
+        padding: 16px 50px 16px 20px;
+        flex: none;
+        max-width: none;
+        margin-right: 0;
+        flex-direction: inherit;
+        align-items: center;
+        margin-bottom: 10px;
+        min-height: auto;
+        border-right: 0;
+        border-radius: 30px;
+
+        &:last-of-type {
+            border-radius: 30px;
+        }
+    }
+}
+
+.intro-info__top-wrap {
+    display: flex;
+    flex-direction: column;
+
+    @include mq($md) {
+        flex: 30%;
+        max-width: 30%;
+        border-right: 1px solid $kelp;
+        padding-right: 16px;    
+    }
+}
+
+.intro-info__pretitle {
+    @include clamp-font-size(14, 16);
+    color: $black;
+    font-weight: 600;
+}
+
+.intro-info__number {
+    line-height: 1;
+    @include clamp-font-size(30, 40);
+    font-family: $font-main;
+    color: $black;
+    // font-weight: 600;
+}
+
+.intro-info__text {
+    @include clamp-font-size(12, 16); 
+    color: $deep-teal;
+
+    span {
+        @include clamp-font-size(14, 20); 
+        text-transform: uppercase;
+        display: inline-block;
+        color: $deep-teal;
+        font-weight: 600;
+    }
+
+    @include mq($md) {
+        max-width: 180px;
+        text-align: left;
+        padding-left: 16px;
+    }
+}
+
+
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+
+    .section-head {
+        text-align: center;
+        margin-bottom: 100px;
+    }
+
+    @include mq($tablet) {
+        min-height: 764px;
+        height: 100%;
+    }
+
+    @include mq($md) {
+        min-height: 558px;
+    }
+}
+  
+.parallax-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* Veći od containera za efekat */
+    // background-size: cover;
+    background-position: center;
+    transform: translateY(0);
+    background-size: 102%;
+    background-repeat: no-repeat;
+    // z-index: 99;
+
+    @include mq($tablet) {
+        top: 14%;
+        min-height: 764px;
+        background-size: cover;
+    }
+
+    @include mq($md) {
+        min-height: 558px;
+        top: 23%;
+    }
+}
+  
+.parallax-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: $black;
+    padding: 20px;
+}

@@ -1,0 +1,126 @@
+/*--------------------------------------------------------------
+## Header
+--------------------------------------------------------------*/
+.site-header--transparent {
+    padding: 10px 0;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    border-bottom: 1px solid transparent;
+    transition: height 0.3s ease, background-color 0.3s ease;
+    height: 130px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    &.scrolled {
+        height: 90px; 
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    @include mq($md) {
+        height: 90px;
+
+        &.scrolled {
+            height: 70px;
+        }
+    }
+}
+
+.site-header--default {
+    padding: 10px 0;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid transparent;
+    transition: height 0.3s ease, background-color 0.3s ease;
+    height: 130px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+
+    &.scrolled {
+        height: 90px; 
+        background-color: rgba(255, 255, 255, 0.95);
+    }
+
+    @include mq($md) {
+        height: 90px;
+
+        &.scrolled {
+            height: 70px;
+        }
+    }
+}
+
+.site-header__branding--mobile {
+    display: none;
+
+    @include mq($md) {
+        display: block;
+
+        .site-header__logo {
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+
+            img {
+                width: 45%;
+                margin: 0 auto 40px;
+            }
+        }
+    }
+}
+
+.site-header__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.site-header__nav {
+    display: flex;
+    align-items: center;
+}
+
+.site-header__logo {
+    display: block;
+    max-width: 150px;
+    width: 100%;
+
+    img {
+        width: 74%;
+    }
+
+    @include mq($sm + 1, min) {
+        max-width: 180px;
+    }
+
+    @include mq($lg + 1, min) {
+        max-width: 222px;
+    }
+}
+
+.site-header__logo-img {
+    transition: opacity 0.3s ease, transform 0.3s ease, width 0.3s ease;
+    opacity: 1;
+    transform: scale(1);
+    width: 150px;
+    will-change: transform, opacity, width;
+
+    
+}
+
+.site-header.scrolled .site-header__logo-img {
+    width: 90px;
+
+    @include mq($md) {
+        width: 70px;
+    }
+}

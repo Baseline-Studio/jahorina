@@ -1,0 +1,41 @@
+.cta-map {
+    padding: 100px 0;
+    background-image: url('assets/images/_demo/lokacija.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @include mq($md) {
+        padding: 60px 0;
+    }
+}
+
+.cta-map__wrap {
+    text-align: center;
+
+    img {
+        margin: 0 auto 15px;
+    }
+
+    @include mq($md) {
+        img {
+            width: 6%;
+        }
+    }
+}
+
+.cta-map-pretitle {
+    @include clamp-font-size(13, 15);
+    text-transform: uppercase;
+    display: block;
+    color: $white;
+    font-weight: 600;
+}
+
+.cta-map__title {
+    @include clamp-font-size(30, 60);
+    line-height: 1.2;
+    margin-bottom: 32px;
+    color: $white;
+    font-family: $font-main;
+}

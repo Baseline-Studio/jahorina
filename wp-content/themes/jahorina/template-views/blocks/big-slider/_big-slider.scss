@@ -1,0 +1,125 @@
+.big-slider {
+    padding: 100px 0;
+    background-color: $azure;
+
+    .section-head {
+        max-width: 700px;
+        margin: 0 auto 40px;
+        text-align: center;
+    }
+
+    .section-head__title {
+        color: $deep-teal;
+    }
+
+    @include mq($tablet) {
+        padding: 50px 0 80px;
+    }
+
+    @include mq($md) {
+        padding: 50px 0 40px;
+    }
+}
+
+.big-slider--location {
+    background-color: $white;
+
+    .section-head {
+        max-width: 100%;
+    }
+
+    @include mq($md) {
+        padding: 10px 0 20px;
+    }
+}
+
+.big-slider__wrap {
+    border-radius: 55px;
+
+    .swiper-pagination {
+        position: absolute;
+        bottom: 10px;
+        left: 0;
+        display: flex;
+        align-items: center;
+        z-index: 10;
+        color: $black;
+        width: 100%;
+        justify-content: space-between;
+        padding: 20px 40px;
+    }
+    
+    .swiper-pagination-fraction {
+        display: flex;
+        justify-content: end;
+        color: $white;
+        font-family: $font-second;
+    }
+    
+    .swiper-pagination-fraction-current {
+        font-weight: bold;
+    }
+    
+    .swiper-pagination-bullet {
+        background: $white;
+        opacity: 1;
+        margin: 0 2px;
+        padding: 0 2px;
+        width: 7px;
+        height: 6px;
+        border-radius: 50%;
+        cursor: pointer;
+
+        &.swiper-pagination-bullet-active {
+            width: 44px;
+            border-radius: 40px;
+        }
+    }
+
+    img {
+        width: 100%;
+        object-fit: cover;
+        cursor: pointer;
+        max-height: 640px;
+    }
+
+    @include mq($md) {
+        border-radius: 20px;
+
+        img {
+            min-height: 251px;
+        }
+
+        .swiper-pagination {
+            bottom: 0;
+            padding: 5px 16px;
+        }
+
+        .swiper-pagination-fraction {
+            font-size: 12px;
+        }
+    }
+}
+
+.big-slider__content {
+    display: flex;
+    grid-gap: 80px;
+    margin: 40px 0;
+    padding: 0 30px;
+
+    @include mq($md) {
+        display: block;
+        padding: 0;
+        margin: 25px 0;
+
+        .entry-content {
+            &:first-of-type {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
+
+.big-slider__btn {
+    text-align: center;
+}

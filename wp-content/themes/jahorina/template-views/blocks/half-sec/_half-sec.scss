@@ -1,0 +1,171 @@
+.half-sec {
+  padding: 150px 0 110px;
+
+  @include mq($tablet) {
+    padding: 100px 0 50px;
+  }
+
+  @include mq($md) {
+    padding: 50px 0;
+  }
+
+  &__wrap {
+    display: flex;
+    grid-gap: 100px;
+    align-items: center;
+
+    img,
+    video {
+      width: 710px;
+      max-height: 460px;
+      min-height: 460px;
+      // object-fit: cover;
+      display: block;
+    }
+
+    video {
+      object-fit: cover;
+    }
+    .entry-content {
+      h2 {
+        color: $deep-teal;
+      }
+    }
+
+    .swiper-pagination {
+      position: absolute;
+      bottom: 20px;
+      left: 0;
+      display: flex;
+      align-items: center;
+      z-index: 10;
+      color: $black;
+      width: 100%;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+
+    .swiper-pagination-fraction {
+      display: flex;
+      justify-content: end;
+      color: $white;
+    }
+
+    .swiper-pagination-fraction-current {
+      font-weight: bold;
+      color: $white;
+    }
+
+    .swiper-pagination-bullet {
+      background: $white;
+      opacity: 1;
+      margin: 0 2px;
+      padding: 0 2px;
+      width: 8px;
+      height: 7px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.swiper-pagination-bullet-active {
+        background: $white;
+        width: 44px;
+        border-radius: 40px;
+      }
+    }
+
+    @include mq($tablet) {
+      grid-gap: 44px;
+    }
+
+    @include mq($lg) {
+      display: block;
+
+      img,
+      video {
+        width: 100%;
+      }
+
+      .swiper-pagination {
+        bottom: 12px;
+        left: -7px;
+      }
+    }
+
+    @include mq($md) {
+      display: block;
+
+      .swiper-pagination-bullet {
+        width: 7px;
+        height: 6px;
+      }
+
+      .swiper-slide {
+        height: auto !important;
+      }
+
+      img,
+      video {
+        max-height: 100%;
+        min-height: 100%;
+      }
+    }
+  }
+
+  &__slider {
+    flex: 60%;
+    max-width: 60%;
+    border-radius: 40px;
+    overflow: hidden; // Dodaj ovu liniju
+  
+    img,
+    video {
+      cursor: pointer;
+    }
+  
+    @include mq($lg) {
+      flex: 100%;
+      max-width: 100%;
+    }
+  
+    @include mq($md) {
+      border-radius: 20px;
+    }
+  }
+
+  &__content {
+    flex: 40%;
+    max-width: 40%;
+
+    .section-head__title {
+      margin-bottom: 40px;
+      color: $deep-teal;
+    }
+
+    .entry-content {
+      margin-bottom: 40px;
+    }
+
+    @include mq($lg) {
+      flex: 100%;
+      max-width: 100%;
+      padding-top: 30px;
+      
+      // .entry-content {
+      //   margin-bottom: 40px;
+      // }
+
+    }
+
+    @include mq($md) { 
+      .section-head__title {
+        margin-bottom: 20px;
+      }
+
+      .entry-content {
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.texts-sec {
+    padding: 200px 0 100px;
+
+    .entry-content {
+        h1 {
+            // padding-bottom: 60px;
+            @include clamp-font-size(30, 50);
+            color: $deep-teal;
+        }
+
+        h2 {
+            margin-top: 60px;
+            @include clamp-font-size(24, 40);
+            color: $deep-teal;
+        }
+
+        p {
+            @include clamp-font-size(14, 16);
+        }
+
+        span {
+            display: block;
+            margin-bottom: 20px;
+            @include clamp-font-size(14, 16);
+        }
+
+        ul {
+            li {
+                font-family: $font-second;
+                margin-bottom: 0;
+                line-height: 1.2;
+                display: flex;
+                align-items: center;
+                padding-bottom: 10px;
+                @include clamp-font-size(14, 16);
+
+                &::before {
+                    top: auto;
+                }
+            }
+        }
+    }
+}
+
+.bottom-text {
+    opacity: .5;
+    display: block;
+    text-align: center;
+    font-style: italic;
+    padding-top: 100px;
+}

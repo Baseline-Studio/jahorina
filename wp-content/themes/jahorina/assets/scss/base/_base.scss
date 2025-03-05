@@ -1,0 +1,127 @@
+/*--------------------------------------------------------------
+## Base Layout
+--------------------------------------------------------------*/
+html, body {
+	@include font-smoothing(antialiased);
+	height: 100%;
+    font-family: $font-second;
+
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+    width: 100%;
+}
+
+html {
+	box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+.site-main {
+	opacity: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 50px;
+
+    @include mq($xl) {
+        padding: 0 60px;
+    }
+
+    @include mq($tablet) {
+        padding: 0 30px;
+    }
+
+}
+
+.container--m {
+    max-width: 1700px;
+}
+
+.container--sm {
+    max-width: 1440px;
+    padding: 0 100px;
+
+    @include mq($xl) {
+        padding: 0 60px;
+    }
+
+    @include mq($tablet) {
+        padding: 0 30px;
+    }
+
+    @include mq($md) {
+        padding: 0 15px;
+    }
+}
+
+.section-head {
+    position: relative;
+    z-index: 2;
+}
+
+.section-head__pretitle {
+    text-transform: uppercase;
+    @include clamp-font-size(14, 16);
+    display: block;
+    line-height: 1.3;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-head__title {
+    @include clamp-font-size(24, 40);
+    font-family: $font-main;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.section-head__title--xl {
+    @include clamp-font-size(30, 64);
+}
+
+.section-head__subtitle {
+    @include clamp-font-size(15, 18);
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(60px);
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Prilagodite veličinu */
+    height: 100%; /* Prilagodite veličinu */
+    background-color: $white; /* Pozadina za preloader */
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.preloader__video {
+    width: 100%;
+}
+
+.opacity {
+    opacity: .5;
+    @include hover {
+        background-color: transparent !important;
+        color: $white !important;
+    }
+}
