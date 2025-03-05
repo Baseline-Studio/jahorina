@@ -68,6 +68,7 @@
 								)
 							);
 							?>
+							<?php do_action('wpml_add_language_selector'); ?>
 						</div>
 						<button type="button" class="main-navigation__toggle js-menu-btn">
 							<span class="main-navigation__toggle-stripe"></span>
@@ -75,6 +76,11 @@
 							<span class="main-navigation__toggle-stripe"></span>
 						</button>
 					</nav><!-- #site-navigation -->
+				</div>
+				<div class="site-header-custom-lang-switch desktop">
+					<span class="circle"></span>
+					<span class="font-down"></span>
+					<?php do_action('wpml_add_language_selector'); ?>
 				</div>
 			</div>
 		</div>

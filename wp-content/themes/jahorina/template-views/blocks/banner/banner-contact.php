@@ -2,9 +2,9 @@
     <div class="container container--sm">
         <div class="banner-contact__container">
             <div class="banner-contact__content">
-                <span class="banner-contact__content-pretitle">Kontakt Informacije</span>
-                <h1 class="banner-contact__content-title">Za sve informacije o projektu i raspoloživim apartmanima kontaktirajte naš prodajni tim.</h1>
-                <p class="banner-contact__content-subtitle">Budite slobodni da nas kontaktirate. Odgovorićemo u što kraćem roku.</p>
+                <span class="banner-contact__content-pretitle"><?php echo wp_kses_post(get_sub_field('pretitle_content')); ?></span>
+                <h1 class="banner-contact__content-title"><?php echo wp_kses_post(get_sub_field('title_content')); ?></h1>
+                <p class="banner-contact__content-subtitle"><?php echo wp_kses_post(get_sub_field('description_content')); ?></p>
             </div>
             
             <div class="banner__contact-form">

@@ -14,6 +14,14 @@ const Navigation = {
 				navigation.classList.toggle('is-active');
 			});
 		}
+
+		const langSwitch = document.querySelector('.site-header-custom-lang-switch');
+
+		if (langSwitch) {
+			langSwitch.addEventListener('click', function() {
+				this.classList.toggle('active');
+			});
+		}
 	}
 };
 

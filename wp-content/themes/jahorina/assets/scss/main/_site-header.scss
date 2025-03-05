@@ -71,7 +71,7 @@
             max-width: 100%;
 
             img {
-                width: 45%;
+                width: 150px;
                 margin: 0 auto 40px;
             }
         }
@@ -87,6 +87,131 @@
 .site-header__nav {
     display: flex;
     align-items: center;
+    margin-left: auto;
+
+    .wpml-ls {
+        display: none;
+
+        @include mq($md) {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+
+            li {
+                margin-bottom: 15px;
+            }
+        }
+    }
+}
+
+.site-header-custom-lang-switch {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+    transition: $dur $ease;
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        border: 2px solid $zeus;
+        border-radius: 50%;
+        display: inline-block;
+        position: relative;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 2px solid $zeus;
+            width: 30px;
+            height: 13px;
+            border-radius: 50%;
+        }
+
+        &::before {
+            width: 13px;
+            height: 30px;
+            transform: translate(-50%, -50%) rotate(180deg);
+        }
+    }
+
+    .font-down {
+        font-size: 24px;
+        transition: $dur $ease;
+        display: inline-block;
+    }
+
+    .wpml-ls {
+        position: absolute;
+        top: 300%;
+        right: 0;
+        width: 100%;
+        min-width: 220px;
+        padding: 15px 10px;
+        background-color: $white;
+        opacity: 0;
+        visibility: hidden;
+        height: 0;
+        max-height: 118px;
+        transition: $dur $ease;
+
+        ul {
+            li {
+                a {
+                    padding: 7px 10px;
+                }
+            }
+        }
+    }
+
+    &.active {
+        overflow: visible;
+
+        .font-down {
+            transform: rotate(180deg);
+        }
+
+        .wpml-ls {
+            opacity: 1;
+            visibility: visible;
+            height: 100%;
+            top: 100%;
+        }
+    }
+
+    &.mobile {
+        display: none;
+
+        @include mq($md) {
+            display: block;
+            position: absolute;
+            bottom: -200%;
+            left: 0;
+            width: 100%;
+
+            ul {
+                display: flex;
+                align-items: center;
+            }
+
+            &.is-active {
+                bottom: 0;
+            }
+        }
+    }
+
+    &.desktop {
+        display: block;
+
+        @include mq($md) {
+            display: none;
+        }
+    }
 }
 
 .site-header__logo {

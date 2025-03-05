@@ -62,6 +62,12 @@ get_header();
                 <?php elseif (get_row_layout() == 'accordion') : ?>
                     <?php get_template_part('template-views/blocks/accordion/accordion'); ?>
 
+                <?php elseif (get_row_layout() == 'texts-sec') : ?>
+                    <?php get_template_part('template-views/blocks/texts-sec/texts-sec'); ?>
+                
+                <?php elseif (get_row_layout() == 'banner_contact') : ?>
+                    <?php get_template_part('template-views/blocks/banner/banner-contact'); ?>
+
                 <?php endif; ?>
 
             <?php endwhile; ?>
