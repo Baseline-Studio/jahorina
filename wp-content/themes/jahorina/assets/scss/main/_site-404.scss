@@ -13,8 +13,11 @@
 	}
 
 	.page-title {
-		font-size: 36px;
 		color: $watercourse;
+		font-family: $font-main;
+        @include clamp-font-size(30, 50);
+		line-height: 1.2;
+		margin-bottom: 40px;
 
 		@include mq($md) {
 			font-size: 28px;
@@ -24,8 +27,8 @@
 	.page-content {
 		p {
 			color: $watercourse;
-			font-size: 20px;
-			margin-bottom: 15px;
+			@include clamp-font-size(16, 18);
+			margin-bottom: 40px;
 
 			@include mq($md) {
 				font-size: 16px;

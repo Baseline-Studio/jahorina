@@ -1849,8 +1849,11 @@ a:hover, a:focus, a:active {
   display: none !important;
 }
 .error404 .page-title {
-  font-size: 36px;
   color: #00674f;
+  font-family: "Lora";
+  font-size: clamp(1.875rem, 1.875rem + (3.125 - 1.875) * ((100vw - 20rem) / (120 - 20)), 3.125rem);
+  line-height: 1.2;
+  margin-bottom: 40px;
 }
 @media screen and (max-width: 767px) {
   .error404 .page-title {
@@ -1859,8 +1862,8 @@ a:hover, a:focus, a:active {
 }
 .error404 .page-content p {
   color: #00674f;
-  font-size: 20px;
-  margin-bottom: 15px;
+  font-size: clamp(1rem, 1rem + (1.125 - 1) * ((100vw - 20rem) / (120 - 20)), 1.125rem);
+  margin-bottom: 40px;
 }
 @media screen and (max-width: 767px) {
   .error404 .page-content p {
