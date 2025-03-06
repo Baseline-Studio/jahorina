@@ -69,6 +69,7 @@
 							);
 							?>
 							<?php do_action('wpml_add_language_selector'); ?>
+							
 						</div>
 						<button type="button" class="main-navigation__toggle js-menu-btn">
 							<span class="main-navigation__toggle-stripe"></span>
