@@ -9,7 +9,28 @@
 
 	.site-header,
 	.site-footer {
-		display: none;
+		display: none !important;
+	}
+
+	.page-title {
+		font-size: 36px;
+		color: $watercourse;
+
+		@include mq($md) {
+			font-size: 28px;
+		}
+	}
+
+	.page-content {
+		p {
+			color: $watercourse;
+			font-size: 20px;
+			margin-bottom: 15px;
+
+			@include mq($md) {
+				font-size: 16px;
+			}
+		}
 	}
 }
 

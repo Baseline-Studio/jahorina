@@ -162,6 +162,8 @@
 
         ul {
             li {
+                text-align: left;
+                
                 a {
                     padding: 7px 10px;
                 }
@@ -206,7 +208,7 @@
     }
 
     &.desktop {
-        display: block;
+        display: flex;
 
         @include mq($md) {
             display: none;

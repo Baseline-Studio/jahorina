@@ -138,6 +138,12 @@
 		flex-direction: column;
 		grid-gap: 15px;
 	}
+
+	a {
+		&.opacity {
+			cursor: not-allowed;
+		}
+	}
 }
 
 .footer-bottom__content {
@@ -209,6 +215,11 @@
 		color: $white;
 		@include clamp-font-size(10, 14);
 		font-family: $font-second;
+		transition: $dur $ease;
+
+		&:hover {
+			color: $watercourse;
+		}
 	}
 
 	@include mq($lg) {

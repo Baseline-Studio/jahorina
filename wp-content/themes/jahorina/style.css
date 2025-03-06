@@ -1375,6 +1375,9 @@ img {
   max-height: 118px;
   transition: 350ms ease;
 }
+.site-header-custom-lang-switch .wpml-ls ul li {
+  text-align: left;
+}
 .site-header-custom-lang-switch .wpml-ls ul li a {
   padding: 7px 10px;
 }
@@ -1410,7 +1413,7 @@ img {
   }
 }
 .site-header-custom-lang-switch.desktop {
-  display: block;
+  display: flex;
 }
 @media screen and (max-width: 767px) {
   .site-header-custom-lang-switch.desktop {
@@ -1719,6 +1722,9 @@ a:hover, a:focus, a:active {
     grid-gap: 15px;
   }
 }
+.footer-bottom__btns a.opacity {
+  cursor: not-allowed;
+}
 
 .footer-bottom__content {
   display: flex;
@@ -1795,6 +1801,10 @@ a:hover, a:focus, a:active {
   color: #fff;
   font-size: clamp(0.625rem, 0.625rem + (0.875 - 0.625) * ((100vw - 20rem) / (120 - 20)), 0.875rem);
   font-family: "Open Sans";
+  transition: 350ms ease;
+}
+.footer-bottom__content-left a:hover {
+  color: #00674f;
 }
 @media screen and (max-width: 991px) {
   .footer-bottom__content-left {
@@ -1836,7 +1846,26 @@ a:hover, a:focus, a:active {
 }
 .error404 .site-header,
 .error404 .site-footer {
-  display: none;
+  display: none !important;
+}
+.error404 .page-title {
+  font-size: 36px;
+  color: #00674f;
+}
+@media screen and (max-width: 767px) {
+  .error404 .page-title {
+    font-size: 28px;
+  }
+}
+.error404 .page-content p {
+  color: #00674f;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+@media screen and (max-width: 767px) {
+  .error404 .page-content p {
+    font-size: 16px;
+  }
 }
 
 .s-404__title {
